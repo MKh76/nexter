@@ -1,0 +1,78 @@
+.header {
+    background-color: $color-grey-dark-1;
+    grid-column: full-start / col-end 6;
+    background-image: linear-gradient(rgba($color-secondary, 0.93), rgba($color-secondary, 0.93)), url(../img/hero.jpeg);
+    background-size: cover;
+    background-position: center;
+    padding: 4rem 8rem 8rem;
+
+    display: grid;
+    grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+    grid-template-columns: minmax(min-content, max-content);
+    gap: 1.5rem 0;
+    justify-content: center;
+
+    @media only screen and (max-width: $bp-med) {
+        grid-column: 1 / -1;
+    }
+
+    @media only screen and (max-width: $bp-sm) {
+        padding: 4rem;
+    }
+    
+    &__logo {
+        height: 3rem;
+        justify-self: center;
+        
+        @media only screen and (max-width: $bp-sm) {
+            margin-top: 3rem;
+        }
+    }
+
+    &__btn {
+        align-self: start;
+        justify-self: start;
+
+        @media only screen and (max-width: $bp-sm) {
+         margin-top: 3rem;
+        }
+    }
+
+    &__seen-on-text {
+        display: grid;
+        align-items: center;
+        font-size: 1.6rem;
+        color: $color-grey-light-2;
+        grid-template-columns: 1fr max-content 1fr;
+        width: 100%;
+        margin: 0 auto;
+        text-transform: capitalize;
+        gap: 1.5rem;
+
+        &::before,
+        &::after {
+            content: "";
+            height: 1px;
+            display: block;
+            background-color: currentColor;
+        }
+
+        @media only screen and (max-width: $bp-sm) {
+            margin-bottom: 1rem;
+           }
+    }
+
+    &__seen-on-logos {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0 2.5rem;
+        align-items: center;
+
+        img {
+            max-height: 2.5rem;
+            max-width: 100%;
+            filter: brightness(70%);
+
+        }
+    }
+}
